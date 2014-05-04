@@ -646,8 +646,8 @@ function Tunnel(properties) {
     if (!_.contains(restarted, this)) {
       restarted.push(this);
     }
-    // restart tunnel if all jobs have restarted
-    if (_.isEmpty(_.difference(all, restarted))) {
+    // restart tunnel if all active jobs have restarted
+    if (_.isEmpty(_.difference(active, restarted))) {
       tunnel.restart();
     }
   });
